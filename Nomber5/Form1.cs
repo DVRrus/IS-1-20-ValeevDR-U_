@@ -85,10 +85,10 @@ namespace Nomber5
                 conn.Close();
                 conn.Open();
                 string add = "INSERT INTO 'T_Uchebka'(FioStud,DatatimeStud) VALUES(@a,@b)";
-                MySqlCommand command = new MySqlCommand(add, conn);
-                command.Parameters.Add("@a", MySqlDbType.VarChar).Value = fio;
-                command.Parameters.Add("@b", MySqlDbType.VarChar).Value = data;
-                command.ExecuteNonQuery();
+                MySqlCommand st3 = new MySqlCommand(add, conn);
+                st3.Parameters.Add("@a", MySqlDbType.VarChar).Value = fio;
+                st3.Parameters.Add("@b", MySqlDbType.VarChar).Value = data;
+                st3.ExecuteNonQuery();
                 conn.Close();
                 
             }

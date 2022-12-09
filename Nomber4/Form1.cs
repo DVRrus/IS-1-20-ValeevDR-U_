@@ -42,7 +42,7 @@ namespace Nomber4
             string f1 = "";
             string f2 = "";
             string f3 = "";
-            string sql =$"SELECT * FROM T_datatime ";
+            string sql =$"SELECT * FROM T_datatime WHERE Id= "+st1;
 
             MySqlDataAdapter adapter = new MySqlDataAdapter($"SELECT * FROM T_datatime ", conn);
             MySqlCommand command = new MySqlCommand(sql, conn);
@@ -75,7 +75,7 @@ namespace Nomber4
 
             conn.Open();
             DataTable table = new DataTable();
-            MySqlDataAdapter adapter = new MySqlDataAdapter($"SELECT * FROM T_datatime ", conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter($"SELECT * FROM T_datatime", conn);
             bas.DataSource = adapter;
 
             dataGridView1.DataSource = bas;
@@ -144,7 +144,7 @@ namespace Nomber4
             try
             {
                 conn.Open();
-                string sqlq = "SELECT * FROM T_datatime WHERE Id" ;
+                string sqlq = "SELECT * FROM T_datatime WHERE Id=" + id;
                 MySqlCommand cmd1 = new MySqlCommand(sqlq, conn);
                 string pictur = cmd1.ExecuteScalar().ToString();
                 Photo(pictur);
